@@ -1,0 +1,68 @@
+{
+   "node_name":"k8s-agent-002",
+   "process_kprobe":{
+      "process":{
+         "exec_id":"azhzLWFnZW50LTAwMjozNDY4NTM0NjMwMDAwMDAwOjQxMDgxMjA=",
+         "pid":4108120,
+         "uid":9999,
+         "binary":"/usr/local/openjdk-8/bin/java",
+         "arguments":"-Xmx1073741824 -Xms1073741824 -XX:MaxMetaspaceSize=268435456 -Dlog.file=/opt/flink/log/flink--standalonesession-0-flink.log -Dlog4j.configuration=file:/opt/flink/conf/log4j-console.properties -Dlog4j.configurationFile=file:/opt/flink/conf/log4j-console.properties -Dlogback.configurationFile=file:/opt/flink/conf/logback-console.xml -classpath /opt/flink/lib/flink-csv-1.11.2.jar:/opt/flink/lib/flink-json-1.11.2.jar:/opt/flink/lib/flink-shaded-zookeeper-3.4.14.jar:/opt/flink/lib/flink-table-blink_2.12-1.11.2.jar:/opt/flink/lib/flink-table_2.12-1.11.2.jar:/opt/flink/lib/log4j-1.2-api-2.12.1.jar:/opt/flink/lib/log4j-api-2.12.1.jar:/opt/flink/lib/log4j-core-2.12.1.jar:/opt/flink/lib/log4j-slf4j-impl-2.12.1.jar:/opt/flink/lib/flink-dist_2.12-1.11.2.jar::: org.apache.flink.runtime.entrypoint.StandaloneSessionClusterEntrypoint --configDir /opt/flink/conf --executionMode cluster \" /opt/flink\"",
+         "flags":"procFS auid nocwd",
+         "start_time":"2024-06-16T19:41:11.565919807Z",
+         "auid":4294967295,
+         "pod":{
+            "namespace":"flink",
+            "name":"flink",
+            "container":{
+               "id":"containerd://23501dafd53798e192a5ccd3f447b8265726007ad90e5a34797000a7022a757e",
+               "name":"flink",
+               "image":{
+                  "id":"docker.io/jtaha/flink",
+                  "name":"docker.io/jtaha/flink"
+               },
+               "start_time":"2024-06-16T19:41:11Z",
+               "pid":1
+            },
+            "pod_labels":{
+               "app.kubernetes.io/name":"flink",
+               "k8s:io.kubernetes.pod.namespace":"flink"
+            },
+            "workload":"flink",
+            "workload_kind":"Pod"
+         },
+         "docker":"23501dafd53798e192a5ccd3f447b82",
+         "parent_exec_id":"azhzLWFnZW50LTAwMjozNDY4NTI1NDkwMDAwMDAwOjQxMDU2OTM=",
+         "refcnt":1,
+         "tid":4108771
+      },
+      "parent":{
+         "exec_id":"azhzLWFnZW50LTAwMjozNDY4NTI1NDkwMDAwMDAwOjQxMDU2OTM=",
+         "pid":4105693,
+         "uid":0,
+         "cwd":"/run/k3s/containerd/io.containerd.runtime.v2.task/k8s.io/8b802336b772e4876473e9d9f2805f619ce92ebde4b745898b6b0eb4afe5b786",
+         "binary":"/var/lib/rancher/rke2/data/v1.27.9-rke2r1-bfe115e44df3/bin/containerd-shim-runc-v2",
+         "arguments":"-namespace k8s.io -id 8b802336b772e4876473e9d9f2805f619ce92ebde4b745898b6b0eb4afe5b786 -address /run/k3s/containerd/containerd.sock",
+         "flags":"procFS auid",
+         "start_time":"2024-06-16T19:41:02.425919736Z",
+         "auid":4294967295,
+         "parent_exec_id":"azhzLWFnZW50LTAwMjo0MDAwMDAwMDox",
+         "tid":4105693
+      },
+      "function_name":"fd_install",
+      "args":[
+         {
+            "int_arg":113
+         },
+         {
+            "file_arg":{
+               "path":"/run/secrets/kubernetes.io/serviceaccount/..2024_06_26_18_09_18.1129120923/ca.crt",
+               "permission":"-rw-r--r--"
+            }
+         }
+      ],
+      "action":"KPROBE_ACTION_POST",
+      "policy_name":"flink-tcp-monitoring",
+      "return_action":"KPROBE_ACTION_POST"
+   },
+   "time":"2024-06-26T18:40:01.760493386Z"
+}

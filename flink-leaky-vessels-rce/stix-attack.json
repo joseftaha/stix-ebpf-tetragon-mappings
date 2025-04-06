@@ -1,0 +1,66 @@
+{
+  "type": "bundle",
+  "id": "bundle--e5e6e1b2-7a4f-4d72-9206-76bcbf43d7e3",
+  "spec_version": "2.1",
+  "objects": [  
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--3a55edec-8a9a-4d39-b4d4-73efb93d2394",
+      "name": "Perform RCE",
+      "description": "Running the uploaded JAR in Flink, triggering the creating a new pod in Kubernetes."
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--8d56c4e4-3544-4c74-9a5b-01d4e8be62fa",
+      "name": "Leaky Vessel",
+      "description": "Injecting reverse shell code into the node's crontab via the container file descriptor vulnerability."
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7f3f637c-6349-43d3-8c42-6db6b77b31f2",
+      "name": "Crontab creates Reverse Shell",
+      "description": "Cron service triggers cronjob, sending a TCP request to an ngrok IP establishing reverse shell on the node."
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0dbeb34d-6ed3-4ed0-889b-1b0c81aaef8a",
+      "name": "Full Node Takeover",
+      "description": "Reading secret information from files or running commands directly on the node via the reverse shell."
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1111aaaa-2222-bbbb-3333-cccc4444dddd",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--6d0f5375-8aaf-48f8-bfb5-8c8b9e7887a4",
+      "target_ref": "attack-pattern--c7b7bfa3-1e8d-4a8a-8d95-d1044e6b111a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2222aaaa-3333-bbbb-4444-cccc5555dddd",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c7b7bfa3-1e8d-4a8a-8d95-d1044e6b111a",
+      "target_ref": "attack-pattern--3a55edec-8a9a-4d39-b4d4-73efb93d2394"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4444aaaa-5555-bbbb-6666-cccc7777dddd",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--3a55edec-8a9a-4d39-b4d4-73efb93d2394",
+      "target_ref": "attack-pattern--8d56c4e4-3544-4c74-9a5b-01d4e8be62fa"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--5555aaaa-6666-bbbb-7777-cccc8888dddd",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8d56c4e4-3544-4c74-9a5b-01d4e8be62fa",
+      "target_ref": "attack-pattern--7f3f637c-6349-43d3-8c42-6db6b77b31f2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6666aaaa-7777-bbbb-8888-cccc9999dddd",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7f3f637c-6349-43d3-8c42-6db6b77b31f2",
+      "target_ref": "attack-pattern--0dbeb34d-6ed3-4ed0-889b-1b0c81aaef8a"
+    }]
+    
+  }

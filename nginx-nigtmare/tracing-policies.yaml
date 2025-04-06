@@ -1,0 +1,61 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicy
+metadata:
+  name: "flink-cron-attack-monitoring"
+spec:
+  kprobes:
+
+  - call: "security_file_permission"
+    syscall: false
+    args:
+    - index: 0
+      type: "file"
+      label: "FILE"
+    - index: 1
+      type: "int"
+    selectors:
+    - matchArgs:      
+      - index: 0
+        operator: "Prefix"
+        values:
+         - "/etc/crontab"
+      - index: 1
+        operator: "Equal"
+        values:
+        - "2"
+
+         
+---
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicyNamespaced
+metadata:
+  name: "flink-tcp-monitoring"
+  namespace: flink
+spec:
+  kprobes:
+  
+  - call: "tcp_connect"
+    syscall: false
+    args:
+    - index: 0
+      type: "sock"
+    selectors:
+    - matchArgs:
+      - index: 0
+        operator: "NotDAddr"
+        values:
+        - 28.4.5.1
+
+  - call: "fd_install"
+    syscall: false
+    args:
+    - index: 0
+      type: "int"
+    - index: 1
+      type: "file"
+    selectors:
+    - matchArgs:      
+      - index: 1
+        operator: "Prefix"
+        values:
+         - "/run/secrets/kubernetes.io/serviceaccount"

@@ -1,0 +1,6 @@
+[submodule "honeycluster"]
+	path = honeycluster
+	url = https://github.com/k8sstormcenter/honeycluster.git
+[submodule "threatintel"]
+	path = threatintel
+	url = https://github.com/k8sstormcenter/threatintel.git

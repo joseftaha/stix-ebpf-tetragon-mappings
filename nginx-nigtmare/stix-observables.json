@@ -1,0 +1,498 @@
+{
+  "type": "bundle",
+  "id": "bundle--6d7db82d-94cb-4d9e-a98f-816b97be6fe4",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "process",
+      "id": "process--69263-curl-kubectl",
+      "pid": 69263,
+      "cwd": "/tmp",
+      "command_line": "/usr/bin/curl -LO https://dl.k8s.io/release/v1.32.3/bin/linux/amd64/kubectl",
+      "created_time": "2025-04-06T10:43:01.364137184Z",
+      "image_ref": "file--b0d39b42-1cc2-48b0-a5c6-1a2aee4f218f",
+      "parent_ref": "process--69196-sh",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "execve",
+          "uid": 101,
+          "tid": 69263,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--b0d39b42-1cc2-48b0-a5c6-1a2aee4f218f",
+      "name": "/usr/bin/curl"
+    },
+    {
+      "type": "process",
+      "id": "process--69196-sh",
+      "pid": 69196,
+      "cwd": "/etc/nginx",
+      "command_line": "/bin/sh",
+      "created_time": "2025-04-06T10:42:37.853598252Z",
+      "image_ref": "file--0f6d4e8f-8234-43f2-a7f7-4e2d3037a55c",
+      "extensions": {
+        "flags": "execve",
+        "uid": 101,
+        "tid": 69196,
+        "auid": 4294967295
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--0f6d4e8f-8234-43f2-a7f7-4e2d3037a55c",
+      "name": "/bin/sh"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--c5aa48e9-6a35-4fcb-8930-0a7334e13401",
+      "first_observed": "2025-04-06T10:43:01.364137184Z",
+      "last_observed": "2025-04-06T10:43:01.364137184Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--69263-curl-kubectl",
+        "process--69196-sh",
+        "file--b0d39b42-1cc2-48b0-a5c6-1a2aee4f218f",
+        "file--0f6d4e8f-8234-43f2-a7f7-4e2d3037a55c",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    },
+
+
+    {
+      "type": "process",
+      "id": "process--69196-shell",
+      "pid": 69196,
+      "cwd": "/etc/nginx",
+      "command_line": "/bin/sh",
+      "created_time": "2025-04-06T10:42:37.853598252Z",
+      "image_ref": "file--8c3f1e0f-9ad9-4b32-b45e-3d7cf1e3f2e1",
+      "parent_ref": "process--68995-proc-init",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "execve",
+          "uid": 101,
+          "tid": 69196,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--8c3f1e0f-9ad9-4b32-b45e-3d7cf1e3f2e1",
+      "name": "/bin/sh"
+    },
+    {
+      "type": "process",
+      "id": "process--68995-proc-init",
+      "pid": 68995,
+      "cwd": "/run/containerd/io.containerd.runtime.v2.task/k8s.io/5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a/rootfs",
+      "command_line": "/proc/self/exe init",
+      "created_time": "2025-04-06T10:42:25.948006612Z",
+      "image_ref": "file--d4a7f51b-b5a3-4d14-8c02-4e37e3c184a6",
+      "extensions": {
+        "flags": "execve clone",
+        "uid": 0,
+        "tid": 68995,
+        "auid": 4294967295
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--d4a7f51b-b5a3-4d14-8c02-4e37e3c184a6",
+      "name": "/proc/self/exe"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--72e3bc34-3ff6-4a55-98e1-f6ac453f0c13",
+      "first_observed": "2025-04-06T10:42:37.853598252Z",
+      "last_observed": "2025-04-06T10:42:37.853598252Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--69196-shell",
+        "process--68995-proc-init",
+        "file--8c3f1e0f-9ad9-4b32-b45e-3d7cf1e3f2e1",
+        "file--d4a7f51b-b5a3-4d14-8c02-4e37e3c184a6",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    },
+
+
+    {
+      "type": "process",
+      "id": "process--8738-nginx-test",
+      "pid": 8738,
+      "cwd": "/etc/nginx",
+      "command_line": "/usr/local/nginx/sbin/nginx -c /tmp/nginx/nginx-cfg2918664200 -t",
+      "created_time": "2025-04-06T09:59:35.258727365Z",
+      "image_ref": "file--a9b8f23c-97b6-4704-8f3e-853d0e8ef9c0",
+      "parent_ref": "process--1487-ingress-controller",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "procFS auid",
+          "uid": 101,
+          "tid": 8738,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--a9b8f23c-97b6-4704-8f3e-853d0e8ef9c0",
+      "name": "/usr/local/nginx/sbin/nginx"
+    },
+    {
+      "type": "process",
+      "id": "process--1487-ingress-controller",
+      "pid": 1487,
+      "cwd": "/etc/nginx",
+      "command_line": "/nginx-ingress-controller --election-id=ingress-nginx-leader --controller-class=k8s.io/ingress-nginx --ingress-class=nginx --configmap=ingress-nginx/ingress-nginx-controller --validating-webhook=:8443 --validating-webhook-certificate=/usr/local/certificates/cert --validating-webhook-key=/usr/local/certificates/key --watch-ingress-without-class=true --enable-metrics=false --publish-status-address=localhost",
+      "created_time": "2025-04-06T08:32:32.258727365Z",
+      "image_ref": "file--c3b4f7b8-9e1c-4d2a-b6e3-f9a4d7b6e9c2",
+      "extensions": {
+        "flags": "procFS auid",
+        "uid": 101,
+        "tid": 1487,
+        "auid": 4294967295
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--c3b4f7b8-9e1c-4d2a-b6e3-f9a4d7b6e9c2",
+      "name": "/nginx-ingress-controller"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--b65e78d4-5c32-485e-b160-fd42d3d6a8d8",
+      "first_observed": "2025-04-06T09:59:35.258727365Z",
+      "last_observed": "2025-04-06T09:59:35.258727365Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--8738-nginx-test",
+        "process--1487-ingress-controller",
+        "file--a9b8f23c-97b6-4704-8f3e-853d0e8ef9c0",
+        "file--c3b4f7b8-9e1c-4d2a-b6e3-f9a4d7b6e9c2",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    },
+
+
+    {
+      "type": "process",
+      "id": "process--69323-chmod",
+      "pid": 69323,
+      "cwd": "/tmp",
+      "command_line": "/bin/chmod +x kubectl",
+      "created_time": "2025-04-06T10:43:12.389076689Z",
+      "image_ref": "file--35f0ae4c-8c20-4b1d-9bfb-78a2d07f8e58",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "execve",
+          "uid": 101,
+          "tid": 69323,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--35f0ae4c-8c20-4b1d-9bfb-78a2d07f8e58",
+      "name": "/bin/chmod"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--bb80dd63-0d7a-4ad6-b7d2-1fd3c2382d25",
+      "first_observed": "2025-04-06T10:43:12.389076689Z",
+      "last_observed": "2025-04-06T10:43:12.389076689Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--69323-chmod",
+        "file--35f0ae4c-8c20-4b1d-9bfb-78a2d07f8e58",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    },
+
+    {
+      "type": "process",
+      "id": "process--69420-kubectl",
+      "pid": 69420,
+      "cwd": "/tmp",
+      "command_line": "/tmp/kubectl get secrets -A",
+      "created_time": "2025-04-06T10:43:23.798629465Z",
+      "image_ref": "file--ecc3fae9-5077-4af1-8749-02f89df015d4",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "execve",
+          "uid": 101,
+          "tid": 69420,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--ecc3fae9-5077-4af1-8749-02f89df015d4",
+      "name": "/tmp/kubectl"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--ff26e7f2-c5a7-42a3-bbcc-0d236ba1c299",
+      "first_observed": "2025-04-06T10:43:23.798629535Z",
+      "last_observed": "2025-04-06T10:43:23.798629535Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--69420-kubectl",
+        "file--ecc3fae9-5077-4af1-8749-02f89df015d4",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    },
+
+
+    {
+      "type": "process",
+      "id": "process--78383-nginx-test",
+      "pid": 78383,
+      "cwd": "/etc/nginx",
+      "command_line": "/usr/bin/nginx -c /tmp/nginx/nginx-cfg1734237508 -t",
+      "created_time": "2025-04-06T11:59:50.116839295Z",
+      "image_ref": "file--e3f2e91c-8a11-4e55-bfa4-316b8c9d3201",
+      "parent_ref": "process--78262-vscode-sh",
+      "extensions": {
+        "x-k8s-process-ext": {
+          "flags": "execve",
+          "uid": 101,
+          "tid": 78383,
+          "auid": 4294967295,
+          "pod_ref": "x-k8s-pod--ingress-nginx-controller"
+        }
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--e3f2e91c-8a11-4e55-bfa4-316b8c9d3201",
+      "name": "/usr/bin/nginx"
+    },
+    {
+      "type": "process",
+      "id": "process--78262-vscode-sh",
+      "pid": 78262,
+      "cwd": "/home/taha",
+      "command_line": "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh 64793",
+      "created_time": "2025-04-06T11:59:38.039975859Z",
+      "image_ref": "file--b8acdf1d-5a99-4e8c-8d3b-275c3d8b84a7",
+      "extensions": {
+        "flags": "execve",
+        "uid": 1000,
+        "tid": 78262,
+        "auid": 1000
+      }
+    },
+    {
+      "type": "file",
+      "id": "file--b8acdf1d-5a99-4e8c-8d3b-275c3d8b84a7",
+      "name": "/usr/share/code/resources/app/out/vs/base/node/cpuUsage.sh"
+    },
+    {
+      "type": "x-k8s-pod",
+      "id": "x-k8s-pod--ingress-nginx-controller",
+      "name": "ingress-nginx-controller-694d5776c-6mxqv",
+      "namespace": "ingress-nginx",
+      "container_ref": "x-k8s-container--controller",
+      "labels": {
+        "app.kubernetes.io/component": "controller",
+        "app.kubernetes.io/instance": "ingress-nginx",
+        "app.kubernetes.io/name": "ingress-nginx",
+        "app.kubernetes.io/part-of": "ingress-nginx",
+        "app.kubernetes.io/version": "1.11.1",
+        "pod-template-hash": "694d5776c"
+      }
+    },
+    {
+      "type": "x-k8s-container",
+      "id": "x-k8s-container--controller",
+      "container_id": "containerd://5498efef3998c5d58f70b8b394ae4f6a58384fd3a2b564a8bee45e7ec649489a",
+      "created_time": "2025-04-06T08:32:32Z",
+      "name": "controller",
+      "image": "registry.k8s.io/ingress-nginx/controller@sha256:e6439a12b52076965928e83b7b56aae6731231677b01e81818bce7fa5c60161a"
+    },
+    {
+      "type": "observed-data",
+      "id": "observed-data--bbd46a91-cf43-4f77-93d2-1e346ca28dc3",
+      "first_observed": "2025-04-06T11:59:50.116839295Z",
+      "last_observed": "2025-04-06T11:59:50.116839295Z",
+      "number_observed": 1,
+      "object_refs": [
+        "process--78383-nginx-test",
+        "process--78262-vscode-sh",
+        "file--e3f2e91c-8a11-4e55-bfa4-316b8c9d3201",
+        "file--b8acdf1d-5a99-4e8c-8d3b-275c3d8b84a7",
+        "x-k8s-pod--ingress-nginx-controller",
+        "x-k8s-container--controller"
+      ],
+      "extensions": {
+        "x-example-com-info-ext": {
+          "node_name": "kind-control-plane",
+          "function_name": "execve"
+        }
+      }
+    }
+  ]
+}

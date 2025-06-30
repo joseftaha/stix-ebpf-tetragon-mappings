@@ -1,0 +1,89 @@
+{
+  "type": "bundle",
+  "id": "bundle--cve-2025-1974-ingressnightmare",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--8cb7a0f6-b1f3-4a5f-b76f-7a9d0f325e8b",
+      "name": "Ingress-NGINX Admission Controller RCE",
+      "description": "Remote Code Execution via admission controller configuration injection using unsanitized NGINX annotations."
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7a1f70e4-5c41-4c56-9c55-e3a08e0229bd",
+      "name": "Download and Install kubectl",
+      "description": "Attacker downloads kubectl using curl and sets executable permissions via chmod in compromised container."
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--acdca390-2e0d-4b8d-8b2a-4f7f7829e729",
+      "name": "Kubernetes Secrets Enumeration",
+      "description": "Attacker executes `kubectl get secrets -A` to access secrets from all namespaces after gaining RCE on ingress-nginx-controller."
+    },
+
+    {
+      "type": "indicator",
+      "id": "indicator--e41df43d-780f-4fc3-8a69-134fb7c20fce",
+      "name": "Curl download of kubectl",
+      "description": "Detects download of kubectl binary using curl in container",
+      "pattern": "[process:command_line MATCHES '.*curl.*https://dl.k8s.io/release/.*/kubectl']",
+      "pattern_type": "stix",
+      "valid_from": "2025-04-06T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--891fef44-df4e-46c7-b49b-07cf2e367962",
+      "name": "Chmod execution on kubectl",
+      "description": "Detects execution of chmod to make kubectl binary executable",
+      "pattern": "[process:command_line MATCHES '.*/chmod \\+x kubectl']",
+      "pattern_type": "stix",
+      "valid_from": "2025-04-06T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fef2c8a5-69c1-4a87-a3bc-f915099f29a6",
+      "name": "Secret enumeration using kubectl",
+      "description": "Detects usage of `kubectl get secrets -A` to access secrets in all namespaces",
+      "pattern": "[process:command_line MATCHES '.*/kubectl get secrets -A']",
+      "pattern_type": "stix",
+      "valid_from": "2025-04-06T00:00:00Z"
+    },
+
+    {
+      "type": "relationship",
+      "id": "relationship--1a998a65-d1b2-49a5-8478-5eaed5bbd6b1",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--e41df43d-780f-4fc3-8a69-134fb7c20fce",
+      "target_ref": "attack-pattern--7a1f70e4-5c41-4c56-9c55-e3a08e0229bd"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2f6a45ed-dc4d-49a9-897f-89bbf1e3fc41",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--891fef44-df4e-46c7-b49b-07cf2e367962",
+      "target_ref": "attack-pattern--7a1f70e4-5c41-4c56-9c55-e3a08e0229bd"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d45f1538-f103-44c8-a2c0-7a54c95d4dc2",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--fef2c8a5-69c1-4a87-a3bc-f915099f29a6",
+      "target_ref": "attack-pattern--acdca390-2e0d-4b8d-8b2a-4f7f7829e729"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cbb1bfc5-0292-4a9e-bc55-d00b97c34e8c",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8cb7a0f6-b1f3-4a5f-b76f-7a9d0f325e8b",
+      "target_ref": "attack-pattern--7a1f70e4-5c41-4c56-9c55-e3a08e0229bd"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2c6d6fbd-4574-4c84-917f-43170a9ed56f",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a1f70e4-5c41-4c56-9c55-e3a08e0229bd",
+      "target_ref": "attack-pattern--acdca390-2e0d-4b8d-8b2a-4f7f7829e729"
+    }
+  ]
+}

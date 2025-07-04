@@ -6,24 +6,28 @@
     {
       "type": "attack-pattern",
       "id": "attack-pattern--3a55edec-8a9a-4d39-b4d4-73efb93d2394",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Perform RCE",
       "description": "Running the uploaded JAR in Flink, triggering the creating a new pod in Kubernetes."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--8d56c4e4-3544-4c74-9a5b-01d4e8be62fa",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Leaky Vessel",
       "description": "Injecting reverse shell code into the node's crontab via the container file descriptor vulnerability."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--7f3f637c-6349-43d3-8c42-6db6b77b31f2",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Crontab creates Reverse Shell",
       "description": "Cron service triggers cronjob, sending a TCP request to an ngrok IP establishing reverse shell on the node."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--0dbeb34d-6ed3-4ed0-889b-1b0c81aaef8a",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Full Node Takeover",
       "description": "Reading secret information from files or running commands directly on the node via the reverse shell."
     },

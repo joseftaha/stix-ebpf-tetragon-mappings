@@ -33,13 +33,6 @@
     },
     {
       "type": "relationship",
-      "id": "relationship--1111aaaa-2222-bbbb-3333-cccc4444dddd",
-      "relationship_type": "uses",
-      "source_ref": "intrusion-set--6d0f5375-8aaf-48f8-bfb5-8c8b9e7887a4",
-      "target_ref": "attack-pattern--c7b7bfa3-1e8d-4a8a-8d95-d1044e6b111a"
-    },
-    {
-      "type": "relationship",
       "id": "relationship--2222aaaa-3333-bbbb-4444-cccc5555dddd",
       "relationship_type": "related-to",
       "source_ref": "attack-pattern--c7b7bfa3-1e8d-4a8a-8d95-d1044e6b111a",

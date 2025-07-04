@@ -6,30 +6,35 @@
     {
       "type": "intrusion-set",
       "id": "intrusion-set--9a5a5581-96ab-4fe9-8548-2377cd1c4393",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "IngressNightmare Exploitation",
       "description": "Chained exploitation of CVE-2025-1974 and related vulnerabilities in Ingress-NGINX Admission Controller to achieve full cluster compromise."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--c6976f30-2eae-48df-a529-06b92e88f122",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Ingress Admission Controller RCE",
       "description": "Remote Code Execution by injecting arbitrary NGINX directives into the Ingress-NGINX Admission Controller using manipulated AdmissionReview requests."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--01d6b6ab-12e7-4091-97b1-5e218c3dfb88",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Ingress Controller File Upload via Client Body Buffer",
       "description": "Abusing client-body buffer feature to upload a shared library file onto the controller pod using oversized HTTP POST requests."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--b24e9284-64b3-4c31-88b0-2a9a6d5f989f",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Load Arbitrary Shared Library using ssl_engine Directive",
       "description": "Loading a malicious shared object via the ssl_engine directive in NGINX configuration during the -t test phase."
     },
     {
       "type": "attack-pattern",
       "id": "attack-pattern--e9e80398-dc90-4f88-a3a2-b6899383fc13",
+      "created": "2025-04-06T10:43:01.364137184Z",
       "name": "Cluster Secret Extraction",
       "description": "After gaining RCE on the controller pod, the attacker reads all Kubernetes secrets across namespaces using the privileged service account."
     },
